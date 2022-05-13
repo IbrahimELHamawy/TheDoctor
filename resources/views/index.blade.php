@@ -11,7 +11,9 @@
     </div>
         <div class="row">
           <!-- categories -->
-                                                  <div class="col col-sm-6 col-md-4 col-lg-3">
+          @foreach ($categories as $category)
+
+                                                  <div style="margin: 0 10px;">
                     <!-- categories -->
 
                         <article style="padding-bottom:30px;">
@@ -21,7 +23,7 @@
                             </div>
                             <form action="categorizedProduct" id="my_form" method="post" name="category">
 
-   <button  name="category" value="category_id" class="cat-title" style="border:none">  category_name </button>
+   <button  name="category" value="{{$category->id}}" class="cat-title" style="border:none"> {{$category->name}} </button>
   </form>
 
 
@@ -29,6 +31,7 @@
                           </div>
                         </article>
                  </div>
+                 @endforeach
 
 
         </div>
@@ -46,3 +49,6 @@
             <br>
       </section >
       @endsection
+
+
+
